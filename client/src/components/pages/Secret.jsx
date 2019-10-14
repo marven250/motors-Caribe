@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import api from '../../api'
 import funnyMemes from '../../funnyMemes'
 
 export default class Secret extends Component {

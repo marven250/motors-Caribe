@@ -17,10 +17,24 @@ $primary: #102f3e;
 
 // --------------------
 // Style reusable for all components
+html {
+  background-image: url('https://www.auto.edu/wp-content/uploads/ATI-1-734x550.png');
+  background-size: cover;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+#textCenter {
+  position: absolute;
+  bottom: 170px;
+  left: 150px;
+  font-size: 1.5em;
+}
+.textCenter {
+  padding: 20px;
 }
 
 .info {
@@ -30,6 +44,16 @@ body {
   display: inline-block;
   background-color: #5776e9;
   color: white;
+}
+#here {
+  color: #fffc00;
+  text-decoration: unset;
+  padding: 10px;
+}
+
+#here:hover {
+  color: #e73f3f;
+  text-decoration: underline;
 }
 
 .info.info-danger {
@@ -89,13 +113,49 @@ body {
   }
 }
 
-// --------------------
-// Style for Secret component
-.Secret {
-  .result {
-    font-size: 1.2em;
-    color: $primary;
-  }
+#aboutNigel {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top: 78px;
+  left: 140px;
+  background-color: #010f12;
+  width: 90%;
+  flex-wrap: wrap;
+}
+
+#nigelText {
+  display: flex;
+  align-items: center;
+  width: 600px;
+  color: #cdcfd9;
+  font-size: 1.3em;
+}
+
+#nigelPic {
+  width: 500px;
+  height: 400px;
+}
+
+#handyMan {
+  position: fixed;
+  left: 1090px;
+  top: 78px;
+  width: 340px;
+}
+.homeHeader {
+  position: fixed;
+  color: #cdcfd9;
+  // left: 500px;
+  padding: 3px;
+  width: 100%;
+  background-color: #041317;
+}
+
+.menu {
+  position: fixed;
+  left: 20px;
+  top: 78px;
 }
 
 #funnyPic {
@@ -103,6 +163,69 @@ body {
   height: 500px;
 }
 
-// #funnyButton{
-//   background-color:
-// }
+#title {
+  font-size: 4em;
+  color: #091416;
+}
+#served:hover {
+  color: blue;
+}
+
+#servicesList {
+  width: 87%;
+  height: 100%;
+  background-color: #34465d;
+  position: relative;
+  left: 140px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+}
+////////////////////////////////////////////////////////////////////////////////
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul.menu {
+  display: inline-block;
+  list-style-type: none;
+}
+li.menu_list {
+  height: 85px;
+  width: 85px;
+  position: relative;
+}
+li.menu_list .front,
+a.side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 86px;
+  width: 100%;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.5s ease-out;
+  cursor: pointer;
+}
+li.menu_list .front {
+  background-color: #34465d;
+  color: #fffc00;
+  transform-origin: 0 0;
+}
+a.side {
+  background-color: #fffc00;
+  color: #34465d;
+  transform-origin: 0 0 85px;
+  transform: rotateY(-90deg);
+}
+li.menu_list:hover a.side {
+  transform: rotateY(0deg);
+}
+li.menu_list:hover .front {
+  transform: rotateY(90deg);
+}

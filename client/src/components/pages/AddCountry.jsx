@@ -51,7 +51,11 @@ export default class AddCountry extends Component {
   render() {
     return (
       <div className="AddCountry">
-        <h2>Add country</h2>
+        <h1 className="homeHeader">Booking</h1>
+        <br />
+        <br />
+        <br />
+        <br />
         <form>
           Name:{' '}
           <input
