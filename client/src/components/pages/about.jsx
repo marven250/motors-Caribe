@@ -1,5 +1,4 @@
 import React from 'react'
-import funnyMemes from '../../funnyMemes'
 
 export default class About extends React.Component {
   render() {
@@ -23,7 +22,7 @@ export default class About extends React.Component {
             distinguishing the good and the bad traits in the automotive
             industry I decided to start my own company. A company where
             transparency and outstanding customer service is at the core of
-            everything we do... and thus Caribean Motorz was born.
+            everything we do... thus Caribean Motorz was born.
           </p>
         </div>
       </div>

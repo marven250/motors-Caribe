@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Home extends Component {
   render() {
@@ -7,7 +8,9 @@ export default class Home extends Component {
         <header className="homeHeader">
           <h3></h3>
           <h1>Caribbean Motorz</h1>
-          <h3>Call (954) 673-7154</h3>
+          <h3>
+            Call <span style={{ color: '#60C1EE' }}>(954) 673-7154</span>
+          </h3>
         </header>
         <h1 id="title">_</h1>
         <div>
@@ -16,9 +19,9 @@ export default class Home extends Component {
             <h4 class="textCenter">Skip the repair shop</h4>
             <h2 class="textCenter">
               Click
-              <a href="/" id="here">
+              <Link to="/services" id="here">
                 here
-              </a>
+              </Link>
               for quotes and bookings
             </h2>
             <h3 class="textCenter">

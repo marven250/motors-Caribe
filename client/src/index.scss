@@ -136,6 +136,20 @@ body {
   width: 500px;
   height: 400px;
 }
+#details:hover {
+  transition: all 0.2s ease;
+  background-color: #60c1ee;
+}
+
+#serve {
+  color: white;
+}
+
+#serve:hover {
+  transition: all 1s ease;
+  color: #60c1ee;
+  font-size: 1.3em;
+}
 
 #handyMan {
   position: fixed;
@@ -143,6 +157,14 @@ body {
   top: 78px;
   width: 340px;
 }
+
+#handyMan2 {
+  position: fixed;
+  left: 1000px;
+  top: 78px;
+  width: 340px;
+}
+
 .homeHeader {
   position: fixed;
   color: #cdcfd9;
@@ -156,6 +178,7 @@ body {
   position: fixed;
   left: 20px;
   top: 78px;
+  z-index: 2;
 }
 
 #funnyPic {
@@ -174,12 +197,12 @@ body {
 #servicesList {
   width: 87%;
   height: 100%;
-  background-color: #34465d;
+  background-color: #041318;
   position: relative;
   left: 140px;
   flex-wrap: wrap;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 ////////////////////////////////////////////////////////////////////////////////
 * {
@@ -228,4 +251,8 @@ li.menu_list:hover a.side {
 }
 li.menu_list:hover .front {
   transform: rotateY(90deg);
+}
+
+.calendly-inline-widget {
+  background: none;
 }

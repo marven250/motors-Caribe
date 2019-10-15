@@ -2,18 +2,21 @@ import React, { Component } from 'react'
 import { Route, Link, NavLink, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Services from './pages/Services'
-import AddCountry from './pages/AddCountry'
+//import AddCountry from './pages/AddCountry'
 import Secret from './pages/Secret'
 import About from './pages/about'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import api from '../api'
+import DetailedService from './pages/detailedService'
+import servicer from '../services.json'
+import Booking from './pages/booking'
 
 export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      countries: [],
+      services: servicer,
     }
   }
 
@@ -46,7 +49,7 @@ export default class App extends Component {
           </li>
           <li className="menu_list">
             <span className="front fas fa-paper-plane"></span>
-            <NavLink to="/add-country">
+            <NavLink to="/booking">
               <a className="side">Book</a>
             </NavLink>
           </li>
@@ -69,10 +72,14 @@ export default class App extends Component {
           <Route path="/about" exact component={About} />
           <Route path="/" exact component={Home} />
           <Route path="/services" component={Services} />
-          <Route path="/add-country" component={AddCountry} />
+          <Route path="/booking" component={Booking} />
           <Route path="/signup" component={Signup} />
           <Route path="/login" component={Login} />
           <Route path="/secret" render={() => <Secret />} />
+          <Route
+            path="/:stuffer"
+            render={props => <DetailedService {...props} />}
+          />
           <Route render={() => <h2>404</h2>} />
         </Switch>
       </div>
