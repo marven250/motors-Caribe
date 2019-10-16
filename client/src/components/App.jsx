@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route, Link, NavLink, Switch } from 'react-router-dom'
+import { Route, NavLink, Switch } from 'react-router-dom'
 import Home from './pages/Home'
 import Services from './pages/Services'
 //import AddCountry from './pages/AddCountry'
@@ -11,6 +11,7 @@ import api from '../api'
 import DetailedService from './pages/detailedService'
 import servicer from '../services.json'
 import Booking from './pages/booking'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 export default class App extends Component {
   constructor(props) {
@@ -32,25 +33,33 @@ export default class App extends Component {
             <span className="front fas fa-home"></span>
 
             <NavLink to="/" exact>
-              <a className="side">Home</a>
+              <a href="/" className="side">
+                Home
+              </a>
             </NavLink>
           </li>
           <li className="menu_list">
             <span className="front fas fa-info"></span>
             <NavLink to="/about" exact>
-              <a className="side">About</a>
+              <a href="/about" className="side">
+                About
+              </a>
             </NavLink>
           </li>
           <li className="menu_list">
             <span className="front fas fa-briefcase"></span>
             <NavLink to="/services">
-              <a className="side">Services</a>
+              <a href="/services" className="side">
+                Services
+              </a>
             </NavLink>
           </li>
           <li className="menu_list">
             <span className="front fas fa-paper-plane"></span>
             <NavLink to="/booking">
-              <a className="side">Book</a>
+              <a href="/booking" className="side">
+                Book
+              </a>
             </NavLink>
           </li>
         </ul>
@@ -68,20 +77,31 @@ export default class App extends Component {
           )}
           <NavLink to="/secret">Funnies</NavLink> */}
 
-        <Switch>
-          <Route path="/about" exact component={About} />
-          <Route path="/" exact component={Home} />
-          <Route path="/services" component={Services} />
-          <Route path="/booking" component={Booking} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/login" component={Login} />
-          <Route path="/secret" render={() => <Secret />} />
-          <Route
-            path="/:stuffer"
-            render={props => <DetailedService {...props} />}
-          />
-          <Route render={() => <h2>404</h2>} />
-        </Switch>
+        <Route
+          render={({ location }) => (
+            <TransitionGroup>
+              <CSSTransition
+                key={location.key}
+                timeout={1000}
+                classNames="fade"
+              >
+                <Switch location={location}>
+                  <Route path="/about" exact component={About} />
+                  <Route path="/" exact component={Home} />
+                  <Route path="/services" component={Services} />
+                  <Route path="/booking" component={Booking} />
+                  <Route path="/signup" component={Signup} />
+                  <Route path="/login" component={Login} />
+                  <Route path="/secret" render={() => <Secret />} />
+                  <Route
+                    path="/:stuffer"
+                    render={props => <DetailedService {...props} />}
+                  />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          )}
+        />
       </div>
     )
   }

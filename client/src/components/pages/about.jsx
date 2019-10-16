@@ -7,6 +7,7 @@ export default class About extends React.Component {
         <h1 className="homeHeader">About</h1>
         <div id="aboutNigel">
           <img
+            alt="woah"
             id="nigelPic"
             src="https://scontent-mia3-2.xx.fbcdn.net/v/t1.0-9/18527888_1514000958630897_8381800238215938588_n.jpg?_nc_cat=108&_nc_oc=AQnontdDaoIENJrh9UlHRov4DRlOuiMAx-zZeEhD6CLUTneq2cb90FULJuveP0fNvR8&_nc_ht=scontent-mia3-2.xx&oh=97d974e5f80cf237fa625a850b1e3a25&oe=5E2010C9"
           ></img>

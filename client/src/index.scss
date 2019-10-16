@@ -132,6 +132,28 @@ body {
   font-size: 1.3em;
 }
 
+.fade-appear,
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 600ms linear 450ms;
+}
+.fade-exit {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 450ms linear;
+}
+
 #nigelPic {
   width: 500px;
   height: 400px;
@@ -140,12 +162,42 @@ body {
   transition: all 0.2s ease;
   background-color: #60c1ee;
 }
+#arrow {
+  position: fixed;
+  bottom: 70px;
+  left: 180px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.3em;
+}
+
+#arrow:hover {
+  transition: all 1s ease;
+  color: #60c1ee;
+}
+
+#books {
+  position: fixed;
+  bottom: 70px;
+  left: 670px;
+  font-size: 1.3em;
+  text-decoration: none;
+  color: white;
+}
+
+#money {
+  position: fixed;
+  right: 80px;
+  bottom: 60px;
+  display: flex;
+}
 
 #serve {
   color: white;
 }
 
-#serve:hover {
+#serve:hover,
+#serve:focus {
   transition: all 1s ease;
   color: #60c1ee;
   font-size: 1.3em;
@@ -203,6 +255,12 @@ body {
   flex-wrap: wrap;
   display: flex;
   justify-content: space-around;
+}
+
+#serviceListing {
+  width: 87%;
+  height: 85%;
+  background-color: #041318;
 }
 ////////////////////////////////////////////////////////////////////////////////
 * {

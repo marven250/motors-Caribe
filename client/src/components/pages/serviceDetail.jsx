@@ -15,8 +15,9 @@ function ServiceDetail(props) {
           margin: '5px',
           backgroundColor: '#cdcfd9',
           borderRadius: '10px',
+          ':hover': { backgroundColor: '#60c1ee' },
         }}
-        //onClick={e => props.showDetails(e, someService[i])}
+        onClick={e => props.showDetails(e, someService[i])}
       >
         <Link
           id="details"
@@ -44,7 +45,7 @@ function ServiceDetail(props) {
 
   return (
     <div>
-      <h1 id="heads" style={{ color: 'white', marginBottom: '30px' }}>
+      <h1 id="heads" style={{ color: '#60c1ee', marginBottom: '30px' }}>
         {props.match.params.stuff}
       </h1>
       {arr}
