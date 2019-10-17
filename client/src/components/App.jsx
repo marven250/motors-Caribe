@@ -97,6 +97,7 @@ export default class App extends Component {
                     path="/:stuffer"
                     render={props => <DetailedService {...props} />}
                   />
+                  <Route render={() => <h2>404</h2>} />
                 </Switch>
               </CSSTransition>
             </TransitionGroup>

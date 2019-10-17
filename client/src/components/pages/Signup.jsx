@@ -38,37 +38,36 @@ export default class Signup extends Component {
   render() {
     return (
       <div className="Signup">
-        <h2>Signup</h2>
-        <form>
-          Username:{' '}
-          <input
-            type="text"
-            value={this.state.username}
-            name="username"
-            onChange={this.handleInputChange}
-          />{' '}
-          <br />
-          Name:{' '}
-          <input
-            type="text"
-            value={this.state.name}
-            name="name"
-            onChange={this.handleInputChange}
-          />{' '}
-          <br />
-          Password:{' '}
-          <input
-            type="password"
-            value={this.state.password}
-            name="password"
-            onChange={this.handleInputChange}
-          />{' '}
-          <br />
-          <button onClick={e => this.handleClick(e)}>Signup</button>
-        </form>
-        {this.state.message && (
-          <div className="info info-danger">{this.state.message}</div>
-        )}
+        <h2 className="homeHeader">Signup</h2>
+        <div className="Login">
+          <form className="former">
+            <input
+              placeholder="Username"
+              className="enter"
+              type="text"
+              value={this.state.username}
+              name="username"
+              onChange={this.handleInputChange}
+            />
+            <br />
+            <input
+              placeholder="Password"
+              className="enter"
+              type="password"
+              value={this.state.password}
+              name="password"
+              onChange={this.handleInputChange}
+            />
+            <br />
+            <button id="but" onClick={e => this.handleClick(e)}>
+              <span style={{ padding: '30px', fontSize: '1.5em' }}>Signup</span>
+            </button>
+          </form>
+
+          {this.state.message && (
+            <div className="info info-danger">{this.state.message}</div>
+          )}
+        </div>
       </div>
     )
   }
