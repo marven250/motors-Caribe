@@ -36,6 +36,7 @@ export default class Secret extends Component {
             Generate Car Funny
           </button>
         </h2>
+        <br></br>
         {this.displayMeme()}
       </div>
     )

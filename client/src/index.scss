@@ -133,9 +133,58 @@ body {
   font-size: 1.3em;
 }
 
-#but:hover {
+#but:hover,
+.but:hover,
+#funyon:hover {
   border: 8px solid #60c1ee;
   transition: all 1.4s ease;
+  color: white
+}
+
+.butt:hover {
+  border: 8px solid #60c1ee;
+  transition: all 1.4s ease;
+  background-color: red;
+  color: white;
+}
+
+.but {
+  padding: 20px;
+  border-radius: 600px;
+  background-color: yellow;
+  border: none;
+  border: 2px solid black;
+  position: fixed;
+  bottom: 78px;
+  left: 30px;
+  font-size: 1.2em;
+}
+
+.butt {
+  padding: 20px;
+  border-radius: 600px;
+  background-color: yellow;
+  border: none;
+  border: 2px solid black;
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+  font-size: 1.2em;
+}
+
+#funyon {
+  padding: 20px;
+  border-radius: 600px;
+  background-image: url('https://previews.123rf.com/images/tostphoto/tostphoto1512/tostphoto151200181/50713738-gears-mechanic-background.jpg');
+  background-size: cover;
+  border: none;
+  border: 2px solid black;
+  position: fixed;
+  bottom: 155px;
+  left: 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
 }
 
 #but {
