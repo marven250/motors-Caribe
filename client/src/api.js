@@ -8,6 +8,14 @@ const service = axios.create({
   withCredentials: true,
 })
 
+const userDelete = axios.delete({
+  baseURL:
+    process.env.NODE_ENV === 'production'
+      ? '/api'
+      : 'http://localhost:5000/api',
+  withCredentials: true,
+})
+
 const errHandler = err => {
   console.error(err)
   if (err.response && err.response.data) {
@@ -56,6 +64,10 @@ export default {
         return res.data
       })
       .catch(errHandler)
+  },
+
+  deleteUser() {
+    return userDelete.deleteUser(this.getLocalStorageUser())
   },
 
   logout() {

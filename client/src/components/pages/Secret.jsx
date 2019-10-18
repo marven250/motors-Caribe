@@ -15,7 +15,6 @@ export default class Secret extends Component {
       let found = funnyMemes.find(meme => {
         return meme.idx === randNum
       })
-      console.log(found)
 
       return (
         <div>
@@ -37,7 +36,19 @@ export default class Secret extends Component {
           </button>
         </h2>
         <br></br>
-        {this.displayMeme()}
+        <div
+          style={{
+            backgroundColor: '#041318',
+            flexWrap: 'wrap',
+            width: '70%',
+            display: 'flex',
+            justifyContent: 'center',
+            position: 'fixed',
+            left: '200px',
+          }}
+        >
+          {this.displayMeme()}
+        </div>
       </div>
     )
   }

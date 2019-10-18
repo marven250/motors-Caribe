@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import api from '../../api'
-import Secret from './Secret'
 
 export default class Home extends Component {
   handleClick(e) {
@@ -15,7 +14,19 @@ export default class Home extends Component {
       .catch(err => console.log(err))
   }
 
+  handleDelete(e) {
+    e.preventDefault()
+    api
+      .deleteUser()
+      .then(result => {
+        console.log('User deleted!')
+        this.props.history.push('/')
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
+    console.log(api.getCountries()._id)
     return (
       <div className="Home">
         <header className="homeHeader">
@@ -74,7 +85,11 @@ export default class Home extends Component {
             Logout
           </button>
         )}
-        {api.isLoggedIn() && <button className="butt">Delete me</button>}
+        {api.isLoggedIn() && (
+          <button onClick={e => this.handleDelete(e)} className="butt">
+            Delete me
+          </button>
+        )}
       </div>
     )
   }
